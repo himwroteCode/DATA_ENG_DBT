@@ -2,34 +2,34 @@ version: 2
 
 sources:
   - name: aspen_raw
-    database: ISOLVED
-    schema: ASPEN_RAW
+    database: DATA_ENG_DBT
+    schema: DBT_BRONZE
     tables:
       - name: clients_clientid_employeeswithssn
-        identifier: CLIENTS_CLIENTID_EMPLOYEESWITHSSN
+        identifier: ASPEN_RAW_CLIENTS_CLIENTID_EMPLOYEESWITHSSN
       - name: clients_clientid_employeeswithssn_name_address
-        identifier: clients_clientId_employeesWithSSN_name_address
+        identifier: ASPEN_RAW_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_NAME_ADDRESS
       - name: clients_clientid_employeeswithssn_personal
-        identifier: clients_clientId_employeesWithSSN_personal
+        identifier: ASPEN_RAW_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_PERSONAL
 
   - name: isl_bronze
-    database: ISOLVED
-    schema: ISL_BRONZE
+    database: DATA_ENG_DBT
+    schema: DBT_BRONZE
     tables:
       - name: clients_clientid_employeeswithssn
-        identifier: CLIENTS_CLIENTID_EMPLOYEESWITHSSN
+        identifier: ISL_BRONZE_CLIENTS_CLIENTID_EMPLOYEESWITHSSN
       - name: clients_clientid_employeeswithssn_name_address
-        identifier: clients_clientId_employeesWithSSN_name_address
+        identifier: ISL_BRONZE_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_NAME_ADDRESS
       - name: clients_clientid_employeeswithssn_personal
-        identifier: clients_clientId_employeesWithSSN_personal
+        identifier: ISL_BRONZE_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_PERSONAL
       - name: vw_lookup_employee_and_legal_id
         identifier: VW_LOOKUP_EMPLOYEE_AND_LEGAL_ID
       - name: vw_lookup_source_and_client_id
         identifier: VW_LOOKUP_SOURCE_AND_CLIENT_ID
 
   - name: axi_odata
-    database: ISOLVED
-    schema: AXI_ODATA
+    database: DATA_ENG_DBT
+    schema: DBT_BRONZE
     tables:
       - name: vw_employees
         identifier: VW_EMPLOYEES

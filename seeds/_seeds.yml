@@ -1,0 +1,47 @@
+version: 2
+
+seeds:
+  - name: isl_bronze_clients_clientid_employeeswithssn
+    config:
+      alias: ISL_BRONZE_CLIENTS_CLIENTID_EMPLOYEESWITHSSN
+      quote_columns: true
+
+  - name: isl_bronze_clients_clientid_employeeswithssn_name_address
+    config:
+      alias: ISL_BRONZE_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_NAME_ADDRESS
+      quote_columns: true
+
+  - name: isl_bronze_clients_clientid_employeeswithssn_personal
+    config:
+      alias: ISL_BRONZE_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_PERSONAL
+      quote_columns: true
+
+  - name: aspen_raw_clients_clientid_employeeswithssn
+    config:
+      alias: ASPEN_RAW_CLIENTS_CLIENTID_EMPLOYEESWITHSSN
+      quote_columns: true
+
+  - name: aspen_raw_clients_clientid_employeeswithssn_name_address
+    config:
+      alias: ASPEN_RAW_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_NAME_ADDRESS
+      quote_columns: true
+
+  - name: aspen_raw_clients_clientid_employeeswithssn_personal
+    config:
+      alias: ASPEN_RAW_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_PERSONAL
+      quote_columns: true
+
+  - name: vw_lookup_employee_and_legal_id
+    config:
+      alias: VW_LOOKUP_EMPLOYEE_AND_LEGAL_ID
+      quote_columns: true
+
+  - name: vw_lookup_source_and_client_id
+    config:
+      alias: VW_LOOKUP_SOURCE_AND_CLIENT_ID
+      quote_columns: true
+
+  - name: axi_odata_vw_employees
+    config:
+      alias: VW_EMPLOYEES
+      quote_columns: true
