@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: aspen_raw
+    database: ISOLVED
+    schema: ASPEN_RAW
+    tables:
+      - name: clients_clientid_employeeswithssn
+        identifier: CLIENTS_CLIENTID_EMPLOYEESWITHSSN
+      - name: clients_clientid_employeeswithssn_name_address
+        identifier: clients_clientId_employeesWithSSN_name_address
+      - name: clients_clientid_employeeswithssn_personal
+        identifier: clients_clientId_employeesWithSSN_personal
+
+  - name: isl_bronze
+    database: ISOLVED
+    schema: ISL_BRONZE
+    tables:
+      - name: clients_clientid_employeeswithssn
+        identifier: CLIENTS_CLIENTID_EMPLOYEESWITHSSN
+      - name: clients_clientid_employeeswithssn_name_address
+        identifier: clients_clientId_employeesWithSSN_name_address
+      - name: clients_clientid_employeeswithssn_personal
+        identifier: clients_clientId_employeesWithSSN_personal
+      - name: vw_lookup_employee_and_legal_id
+        identifier: VW_LOOKUP_EMPLOYEE_AND_LEGAL_ID
+      - name: vw_lookup_source_and_client_id
+        identifier: VW_LOOKUP_SOURCE_AND_CLIENT_ID
+
+  - name: axi_odata
+    database: ISOLVED
+    schema: AXI_ODATA
+    tables:
+      - name: vw_employees
+        identifier: VW_EMPLOYEES
