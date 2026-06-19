@@ -23,13 +23,13 @@ seeds:
 models:
   data_eng_dbt:
     staging:
-      +schema: dbt_bronze
+      +schema: DBT_BRONZE
       +materialized: view
     intermediate:
-      +schema: dbt_bronze
+      +schema: DBT_BRONZE
       +materialized: view
     silver:
-      +schema: dbt_silver
+      +schema: DBT_SILVER
       +materialized: table
 
 flags:

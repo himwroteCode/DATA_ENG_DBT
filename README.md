@@ -70,6 +70,10 @@ dbt run --select +employees        # staging → intermediate → silver
 dbt test --select +employees       # data quality tests
 ```
 
+## Schema naming (dbt Studio / Cloud)
+
+This project uses shared medallion schemas (`DBT_BRONZE`, `DBT_SILVER`) via `macros/generate_schema_name.sql`. Without that macro, dbt Studio prefixes your personal dev schema (e.g. `DBT_HVAISH_DBT_BRONZE`).
+
 ## Expected results
 
 - 9 tables in `DATA_ENG_DBT.DBT_BRONZE`
