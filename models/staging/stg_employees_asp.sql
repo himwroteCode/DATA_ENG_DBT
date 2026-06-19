@@ -258,3 +258,5 @@ t2."id" AS employee_id,
 FROM {{ source('aspen_raw', 'clients_clientid_employeeswithssn') }} t2
 
 LEFT JOIN {{ source('aspen_raw', 'clients_clientid_employeeswithssn_name_address') }} t3 ON t3."employeesWithSSN_id" = t2."id"
+
+left JOIN {{ source('aspen_raw', 'clients_clientid_employeeswithssn_personal') }} t4 on t4."employeesWithSSN_id" = t2."id"
