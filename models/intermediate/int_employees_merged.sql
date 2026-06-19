@@ -18,7 +18,7 @@ SELECT DISTINCT
  
     isl.i9_completed AS i9_completed,
  
-    CASE WHEN isl.employee_number IS NOT NULL THEN isl.employee_number ELSE od.EMPLOYEENUMBER END AS employee_number,
+    CASE WHEN isl.employee_number IS NOT NULL THEN CAST(isl.employee_number AS VARCHAR) ELSE CAST(od.EMPLOYEENUMBER AS VARCHAR) END AS employee_number,
  
     isl.employment_category_full_time_equivalent AS employment_category_full_time_equivalent,
  

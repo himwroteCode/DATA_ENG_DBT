@@ -29,7 +29,7 @@ t2."id" AS employee_id,
  
     cast(t2."emailAddress" as string) AS email_address,
  
-    t2."employeeNumber" AS employee_number,  
+    cast(t2."employeeNumber" as string) AS employee_number,  
  
     t2."employmentCategoryCode" AS employment_category_code,  
  

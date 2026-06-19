@@ -29,7 +29,7 @@ t2."id" AS employee_id,
  
     cast(t2."emailAddress" as string) AS email_address,  
  
-    t2."employeeNumber" AS employee_number,  
+    cast(t2."employeeNumber" as string) AS employee_number,  
  
     t2."employmentCategoryCode" AS employment_category_code,  
  
@@ -93,7 +93,7 @@ t2."id" AS employee_id,
  
     t2."jobFLSAExempt" AS job_flsaexempt,  
  
-    t2."jobGroup" AS job_group,  
+    cast(t2."jobGroup" as string) AS job_group,  
  
     t2."jobIsSeasonal" AS job_is_seasonal,  
  
@@ -155,7 +155,7 @@ t2."id" AS employee_id,
  
     t2."salaryEffectiveDate" AS salary_effective_date,  
  
-    t2."socCode" AS soc_code,  
+    cast(t2."socCode" as string) AS soc_code,  
  
     t2."ssn" AS ssn,  
  
