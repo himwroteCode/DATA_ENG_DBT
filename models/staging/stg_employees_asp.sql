@@ -121,7 +121,7 @@ t2."id" AS employee_id,
  
    -- t2."deleteAddress" AS delete_address,  
  
-    t2."foreignPostalCode" AS name_address_foreign_postal_code,  
+    t2."foreignPostalCode" AS foreign_postal_code,  
  
     t2."foreignStateProvince" AS foreign_state_province,  
  

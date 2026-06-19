@@ -6,29 +6,29 @@ SELECT DISTINCT
  
     isl.disability_notes AS disability_notes,
  
-    CASE WHEN isl.employment_status IS NOT NULL THEN isl.employment_status ELSE od.EMPLOYMENTSTATUSDESCRIPTION END AS employment_status,
+    COALESCE(CAST(isl.employment_status AS VARCHAR), CAST(od.EMPLOYMENTSTATUSDESCRIPTION AS VARCHAR)) AS employment_status,
  
     isl.foreign_state_province AS foreign_state_province,
  
     isl.enable_self_service AS enable_self_service,
  
-    CASE WHEN isl.termination_date IS NOT NULL THEN isl.termination_date ELSE od.TERMINATIONDATE END AS termination_date,
+    COALESCE(CAST(isl.termination_date AS VARCHAR), CAST(od.TERMINATIONDATE AS VARCHAR)) AS termination_date,
  
     isl.rehire_date AS rehire_date,
  
     isl.i9_completed AS i9_completed,
  
-    CASE WHEN isl.employee_number IS NOT NULL THEN CAST(isl.employee_number AS VARCHAR) ELSE CAST(od.EMPLOYEENUMBER AS VARCHAR) END AS employee_number,
+    COALESCE(CAST(isl.employee_number AS VARCHAR), CAST(od.EMPLOYEENUMBER AS VARCHAR)) AS employee_number,
  
     isl.employment_category_full_time_equivalent AS employment_category_full_time_equivalent,
  
-    CASE WHEN isl.client_id IS NOT NULL THEN CAST(isl.client_id AS VARCHAR) ELSE od.CLIENTID END AS client_id,
+    COALESCE(CAST(isl.client_id AS VARCHAR), CAST(od.CLIENTID AS VARCHAR)) AS client_id,
  
     isl.updated_disabled_effective_date AS updated_disabled_effective_date,
  
-    CASE WHEN isl.is_remote_worker IS NOT NULL THEN isl.is_remote_worker ELSE od.ISREMOTEWORKER END AS is_remote_worker,
+    COALESCE(CAST(isl.is_remote_worker AS VARCHAR), CAST(od.ISREMOTEWORKER AS VARCHAR)) AS is_remote_worker,
  
-    CASE WHEN isl.normal_hours IS NOT NULL THEN isl.normal_hours ELSE od.NORMALHOURS END AS normal_hours,
+    COALESCE(CAST(isl.normal_hours AS VARCHAR), CAST(od.NORMALHOURS AS VARCHAR)) AS normal_hours,
  
     isl.status_date AS status_date,
  
@@ -36,37 +36,37 @@ SELECT DISTINCT
  
     isl.reciprocity_rule AS reciprocity_rule,
  
-    CASE WHEN isl.military_status IS NOT NULL THEN isl.military_status ELSE od.MILITARYSTATUSDESCRIPTION END AS military_status,
+    COALESCE(CAST(isl.military_status AS VARCHAR), CAST(od.MILITARYSTATUSDESCRIPTION AS VARCHAR)) AS military_status,
  
     isl.termination_type AS termination_type,
  
     isl.citizenship AS citizenship,
  
-    CASE WHEN isl.gender IS NOT NULL THEN isl.gender ELSE od.GENDERDESCRIPTION END AS gender,
+    COALESCE(CAST(isl.gender AS VARCHAR), CAST(od.GENDERDESCRIPTION AS VARCHAR)) AS gender,
  
-    CASE WHEN isl.salary_effective_date IS NOT NULL THEN isl.salary_effective_date ELSE od.EMPLOYEEPAYEFFECTIVEDATE END AS salary_effective_date,
+    COALESCE(CAST(isl.salary_effective_date AS VARCHAR), CAST(od.EMPLOYEEPAYEFFECTIVEDATE AS VARCHAR)) AS salary_effective_date,
  
     isl.timecard_punch_status_is_in AS timecard_punch_status_is_in,
  
     isl.document_file_name AS document_file_name,
  
-    CASE WHEN isl.hourly_rate IS NOT NULL THEN isl.hourly_rate ELSE od.HOURLYRATE END AS hourly_rate,
+    COALESCE(CAST(isl.hourly_rate AS VARCHAR), CAST(od.HOURLYRATE AS VARCHAR)) AS hourly_rate,
  
-    CASE WHEN isl.ssn IS NOT NULL THEN isl.ssn ELSE od.SSN END AS ssn,
+    COALESCE(CAST(isl.ssn AS VARCHAR), CAST(od.SSN AS VARCHAR)) AS ssn,
  
     isl.is_recently_separated_veteran AS is_recently_separated_veteran,
  
-    CASE WHEN isl.timeclock_id IS NOT NULL THEN isl.timeclock_id ELSE od.TIMECLOCKID END AS timeclock_id,
+    COALESCE(CAST(isl.timeclock_id AS VARCHAR), CAST(od.TIMECLOCKID AS VARCHAR)) AS timeclock_id,
  
     isl.job_is_seasonal AS job_is_seasonal,
  
-    CASE WHEN isl.ethnic_origin IS NOT NULL THEN isl.ethnic_origin ELSE od.ETHNICORIGINDESCRIPTION END AS ethnic_origin,
+    COALESCE(CAST(isl.ethnic_origin AS VARCHAR), CAST(od.ETHNICORIGINDESCRIPTION AS VARCHAR)) AS ethnic_origin,
  
     isl.document_description AS document_description,
  
-    CASE WHEN isl.adjusted_service_date IS NOT NULL THEN isl.adjusted_service_date ELSE od.ADJUSTEDSERVICEDATE END AS adjusted_service_date,
+    COALESCE(CAST(isl.adjusted_service_date AS VARCHAR), CAST(od.ADJUSTEDSERVICEDATE AS VARCHAR)) AS adjusted_service_date,
  
-    CASE WHEN isl.termination_reason IS NOT NULL THEN isl.termination_reason ELSE od.TERMINATIONREASONDESCRIPTION END AS termination_reason,
+    COALESCE(CAST(isl.termination_reason AS VARCHAR), CAST(od.TERMINATIONREASONDESCRIPTION AS VARCHAR)) AS termination_reason,
  
     isl.expiration_date AS expiration_date,
  
@@ -76,15 +76,15 @@ SELECT DISTINCT
  
     isl.application_date AS application_date,
  
-    CASE WHEN isl.birth_date IS NOT NULL THEN isl.birth_date ELSE od.BIRTHDATE END AS birth_date,
+    COALESCE(CAST(isl.birth_date AS VARCHAR), CAST(od.BIRTHDATE AS VARCHAR)) AS birth_date,
  
     isl.disabled AS disabled,
  
-    CASE WHEN isl.soc_code IS NOT NULL THEN isl.soc_code ELSE od.SOCCODE END AS soc_code,
+    COALESCE(CAST(isl.soc_code AS VARCHAR), CAST(od.SOCCODE AS VARCHAR)) AS soc_code,
  
-    CASE WHEN isl.country IS NOT NULL THEN CAST(isl.country AS VARCHAR) ELSE od.COUNTY END AS country,
+    COALESCE(CAST(isl.country AS VARCHAR), CAST(od.COUNTY AS VARCHAR)) AS country,
  
-  --  CASE WHEN isl.work_location IS NOT NULL THEN isl.work_location ELSE od.LOCATIONID END AS work_location,
+  --  COALESCE(CAST(isl.work_location AS VARCHAR), CAST(od.LOCATIONID AS VARCHAR)) AS work_location,
  
     isl.work_location AS work_location,
  
@@ -96,7 +96,7 @@ SELECT DISTINCT
  
     isl.updated_status_date AS updated_status_date,
  
-    CASE WHEN isl.employment_category_code IS NOT NULL THEN isl.employment_category_code ELSE od.EMPLOYMENTCATEGORYCODE END AS employment_category_code,
+    COALESCE(CAST(isl.employment_category_code AS VARCHAR), CAST(od.EMPLOYMENTCATEGORYCODE AS VARCHAR)) AS employment_category_code,
  
     isl.updated_hire_date AS updated_hire_date,
  
@@ -106,9 +106,9 @@ SELECT DISTINCT
  
     isl.aca_employment_status AS aca_employment_status,
  
-    CASE WHEN isl.tax_exempt_status IS NOT NULL THEN CAST(isl.tax_exempt_status AS VARCHAR) ELSE od.TAXEXEMPTSTATUSDESCRIPTION END AS tax_exempt_status,
+    COALESCE(CAST(isl.tax_exempt_status AS VARCHAR), CAST(od.TAXEXEMPTSTATUSDESCRIPTION AS VARCHAR)) AS tax_exempt_status,
  
-    CASE WHEN isl.email_address IS NOT NULL THEN  isl.email_address ELSE od.EMAILADDRESS END AS EMAIL_ADDRESS,
+    COALESCE(CAST(isl.email_address AS VARCHAR), CAST(od.EMAILADDRESS AS VARCHAR)) AS EMAIL_ADDRESS,
  
     isl.is_supervisor AS is_supervisor,
  
@@ -118,7 +118,7 @@ SELECT DISTINCT
  
     isl.document_content AS document_content,
  
-    CASE WHEN isl.pay_frequency IS NOT NULL THEN CAST(isl.pay_frequency AS VARCHAR) ELSE od.FREQUENCY END AS pay_frequency,
+    COALESCE(CAST(isl.pay_frequency AS VARCHAR), CAST(od.FREQUENCY AS VARCHAR)) AS pay_frequency,
  
     isl.disability_description AS disability_description,
  
@@ -128,37 +128,37 @@ SELECT DISTINCT
  
     isl.profile_picture AS profile_picture,
  
-    CASE WHEN isl.workers_comp_code IS NOT NULL THEN isl.workers_comp_code ELSE od.WORKERSCOMPCODE END AS workers_comp_code,
+    COALESCE(CAST(isl.workers_comp_code AS VARCHAR), CAST(od.WORKERSCOMPCODE AS VARCHAR)) AS workers_comp_code,
  
     isl.issuing_authority AS issuing_authority,
  
-    CASE WHEN isl.job_effective_date IS NOT NULL THEN isl.job_effective_date ELSE od.EMPLOYEEJOBEFFECTIVEDATE END AS job_effective_date,
+    COALESCE(CAST(isl.job_effective_date AS VARCHAR), CAST(od.EMPLOYEEJOBEFFECTIVEDATE AS VARCHAR)) AS job_effective_date,
  
-    CASE WHEN isl.job_code IS NOT NULL THEN isl.job_code ELSE od.JOBCODE END AS job_code,
+    COALESCE(CAST(isl.job_code AS VARCHAR), CAST(od.JOBCODE AS VARCHAR)) AS job_code,
  
-    CASE WHEN isl.job_title IS NOT NULL THEN isl.job_title ELSE od.JOBTITLE END AS job_title,
+    COALESCE(CAST(isl.job_title AS VARCHAR), CAST(od.JOBTITLE AS VARCHAR)) AS job_title,
  
-    CASE WHEN isl.job_eeo_category IS NOT NULL THEN isl.job_eeo_category ELSE od.EEOCATEGORYDESCRIPTION END AS job_eeo_category,
+    COALESCE(CAST(isl.job_eeo_category AS VARCHAR), CAST(od.EEOCATEGORYDESCRIPTION AS VARCHAR)) AS job_eeo_category,
  
-    CASE WHEN isl.legal_id IS NOT NULL THEN CAST(isl.legal_id AS VARCHAR) ELSE od.LEGALID END AS legal_id,
+    COALESCE(CAST(isl.legal_id AS VARCHAR), CAST(od.LEGALID AS VARCHAR)) AS legal_id,
  
     isl.is_manager AS is_manager,
  
-    CASE WHEN isl.pay_group IS NOT NULL THEN isl.pay_group ELSE od.FREQUENCYDESCRIPTION END AS pay_group,
+    COALESCE(CAST(isl.pay_group AS VARCHAR), CAST(od.FREQUENCYDESCRIPTION AS VARCHAR)) AS pay_group,
  
-    CASE WHEN isl.job_flsaexempt IS NOT NULL THEN isl.job_flsaexempt ELSE od.FLSAEXEMPT END AS job_flsaexempt,
+    COALESCE(CAST(isl.job_flsaexempt AS VARCHAR), CAST(od.FLSAEXEMPT AS VARCHAR)) AS job_flsaexempt,
  
     isl.job_accepted_date AS job_accepted_date,
  
-    CASE WHEN isl.per_pay_salary IS NOT NULL THEN isl.per_pay_salary ELSE od.PERPAYSALARY END AS per_pay_salary,
+    COALESCE(CAST(isl.per_pay_salary AS VARCHAR), CAST(od.PERPAYSALARY AS VARCHAR)) AS per_pay_salary,
  
     isl.original_hire_date AS original_hire_date,
  
-    CASE WHEN isl.pay_type IS NOT NULL THEN isl.pay_type ELSE od.PAYTYPEDESCRIPTION END AS pay_type,
+    COALESCE(CAST(isl.pay_type AS VARCHAR), CAST(od.PAYTYPEDESCRIPTION AS VARCHAR)) AS pay_type,
  
-    CASE WHEN isl.tobacco_use IS NOT NULL THEN isl.tobacco_use ELSE od.TOBACCOUSE END AS tobacco_use,
+    COALESCE(CAST(isl.tobacco_use AS VARCHAR), CAST(od.TOBACCOUSE AS VARCHAR)) AS tobacco_use,
  
-    CASE WHEN isl.employee_id IS NOT NULL THEN CAST(isl.employee_id AS VARCHAR) ELSE od.EMPLOYEEID END AS employee_id,
+    COALESCE(CAST(isl.employee_id AS VARCHAR), CAST(od.EMPLOYEEID AS VARCHAR)) AS employee_id,
  
     isl.allow_supervisor_access AS allow_supervisor_access,
  
@@ -166,29 +166,29 @@ SELECT DISTINCT
  
     isl.work_location_dash_description AS work_location_dash_description,
  
-    CASE WHEN isl.job_is_union IS NOT NULL THEN isl.job_is_union ELSE od.UNIONEMPLOYEE END AS job_is_union,
+    COALESCE(CAST(isl.job_is_union AS VARCHAR), CAST(od.UNIONEMPLOYEE AS VARCHAR)) AS job_is_union,
  
-    CASE WHEN isl.eeo_gender_override IS NOT NULL THEN isl.eeo_gender_override ELSE od.EEOGENDERDESCRIPTION END AS eeo_gender_override,
+    COALESCE(CAST(isl.eeo_gender_override AS VARCHAR), CAST(od.EEOGENDERDESCRIPTION AS VARCHAR)) AS eeo_gender_override,
  
     isl.disabled_effective_date AS disabled_effective_date,
  
     isl.allow_employee_access AS allow_employee_access,
  
-    CASE WHEN isl.hire_date IS NOT NULL THEN isl.hire_date ELSE od.HIREDATE END AS hire_date,
+    COALESCE(CAST(isl.hire_date AS VARCHAR), CAST(od.HIREDATE AS VARCHAR)) AS hire_date,
  
-    CASE WHEN isl.eligible_for_rehire IS NOT NULL THEN isl.eligible_for_rehire ELSE od.ELIGIBLEFORREHIRE END AS eligible_for_rehire,
+    COALESCE(CAST(isl.eligible_for_rehire AS VARCHAR), CAST(od.ELIGIBLEFORREHIRE AS VARCHAR)) AS eligible_for_rehire,
  
     isl.allow_manager_access AS allow_manager_access,
  
-    CASE WHEN isl.employment_category_effective_date IS NOT NULL THEN isl.employment_category_effective_date ELSE od.EMPLOYMENTCATEGORYEFFECTIVEDATE END AS employment_category_effective_date,
+    COALESCE(CAST(isl.employment_category_effective_date AS VARCHAR), CAST(od.EMPLOYMENTCATEGORYEFFECTIVEDATE AS VARCHAR)) AS employment_category_effective_date,
  
     isl.is_pending AS is_pending,
  
     isl.military_city AS military_city,
  
-    CASE WHEN isl.marital_status IS NOT NULL THEN isl.marital_status ELSE od.MARITALSTATUSDESCRIPTION END AS marital_status,
+    COALESCE(CAST(isl.marital_status AS VARCHAR), CAST(od.MARITALSTATUSDESCRIPTION AS VARCHAR)) AS marital_status,
  
-    CASE WHEN isl.legal_code IS NOT NULL THEN isl.legal_code ELSE od.COMPANYCODE END AS legal_code,
+    COALESCE(CAST(isl.legal_code AS VARCHAR), CAST(od.COMPANYCODE AS VARCHAR)) AS legal_code,
  
     isl.active_duty_separation_date AS active_duty_separation_date,
  
@@ -214,47 +214,47 @@ SELECT DISTINCT
  
     od.PERSONID AS PERSON_ID,
  
-    CASE WHEN isl.mobile_phone IS NOT NULL THEN isl.mobile_phone ELSE od.MOBILEPHONE END AS mobile_phone,
+    COALESCE(CAST(isl.mobile_phone AS VARCHAR), CAST(od.MOBILEPHONE AS VARCHAR)) AS mobile_phone,
  
-    CASE WHEN isl.state IS NOT NULL THEN isl.state ELSE od.STATECODE END AS state,
+    COALESCE(CAST(isl.state AS VARCHAR), CAST(od.STATECODE AS VARCHAR)) AS state,
  
-    CASE WHEN isl.home_phone IS NOT NULL THEN isl.home_phone ELSE od.HOMEPHONE END AS home_phone,
+    COALESCE(CAST(isl.home_phone AS VARCHAR), CAST(od.HOMEPHONE AS VARCHAR)) AS home_phone,
  
     isl.school_district_code AS school_district_code,
  
-    CASE WHEN isl.first_name IS NOT NULL THEN isl.first_name ELSE od.FIRSTNAME END AS first_name,
+    COALESCE(CAST(isl.first_name AS VARCHAR), CAST(od.FIRSTNAME AS VARCHAR)) AS first_name,
  
-    CASE WHEN isl.suffix IS NOT NULL THEN isl.suffix ELSE od.SUFFIX END AS suffix,
+    COALESCE(CAST(isl.suffix AS VARCHAR), CAST(od.SUFFIX AS VARCHAR)) AS suffix,
  
-    CASE WHEN isl.personal_email_address IS NOT NULL THEN isl.personal_email_address ELSE od.PERSONALEMAILADDRESS END AS personal_email_address,
+    COALESCE(CAST(isl.personal_email_address AS VARCHAR), CAST(od.PERSONALEMAILADDRESS AS VARCHAR)) AS personal_email_address,
  
     isl.resident_geo_code AS resident_geo_code,
  
-    CASE WHEN isl.prefix IS NOT NULL THEN isl.prefix ELSE od.PREFIX END AS prefix,
+    COALESCE(CAST(isl.prefix AS VARCHAR), CAST(od.PREFIX AS VARCHAR)) AS prefix,
  
     isl.delete_address AS delete_address,
  
-    CASE WHEN isl.city IS NOT NULL THEN CAST(isl.city AS VARCHAR) ELSE od.CITY END AS city,
+    COALESCE(CAST(isl.city AS VARCHAR), CAST(od.CITY AS VARCHAR)) AS city,
  
     isl.use_for_tax_forms AS use_for_tax_forms,
  
-    CASE WHEN isl.zip_code IS NOT NULL THEN CAST(isl.zip_code AS VARCHAR) ELSE od.ZIPCODE END AS zip_code,
+    COALESCE(CAST(isl.zip_code AS VARCHAR), CAST(od.ZIPCODE AS VARCHAR)) AS zip_code,
  
     isl.foreign_postal_code AS foreign_postal_code,
  
-    CASE WHEN isl.middle_name IS NOT NULL THEN isl.middle_name ELSE od.MIDDLENAME END AS middle_name,
+    COALESCE(CAST(isl.middle_name AS VARCHAR), CAST(od.MIDDLENAME AS VARCHAR)) AS middle_name,
  
-    CASE WHEN isl.address1 IS NOT NULL THEN CAST(isl.address1 AS VARCHAR) ELSE od.ADDRESS1 END AS address1,
+    COALESCE(CAST(isl.address1 AS VARCHAR), CAST(od.ADDRESS1 AS VARCHAR)) AS address1,
  
-    CASE WHEN isl.office_phone IS NOT NULL THEN isl.office_phone ELSE od.OFFICEPHONE END AS office_phone,
+    COALESCE(CAST(isl.office_phone AS VARCHAR), CAST(od.OFFICEPHONE AS VARCHAR)) AS office_phone,
  
-    CASE WHEN isl.last_name IS NOT NULL THEN isl.last_name ELSE od.LASTNAME END AS last_name,
+    COALESCE(CAST(isl.last_name AS VARCHAR), CAST(od.LASTNAME AS VARCHAR)) AS last_name,
  
-    CASE WHEN isl.fax_number IS NOT NULL THEN isl.fax_number ELSE od.FAXNUMBER END AS fax_number,
+    COALESCE(CAST(isl.fax_number AS VARCHAR), CAST(od.FAXNUMBER AS VARCHAR)) AS fax_number,
  
-    CASE WHEN isl.address2 IS NOT NULL THEN CAST(isl.address2 AS VARCHAR) ELSE od.ADDRESS2 END AS address2,
+    COALESCE(CAST(isl.address2 AS VARCHAR), CAST(od.ADDRESS2 AS VARCHAR)) AS address2,
  
-    CASE WHEN isl.preferred_name IS NOT NULL THEN isl.preferred_name ELSE od.PREFERREDNAME END AS preferred_name,
+    COALESCE(CAST(isl.preferred_name AS VARCHAR), CAST(od.PREFERREDNAME AS VARCHAR)) AS preferred_name,
  
     isl.preferred_pronouns AS preferred_pronouns,
  
@@ -376,11 +376,11 @@ SELECT DISTINCT
  
     od.PEOSTARTDATE AS PEO_START_DATE,
  
-    CASE WHEN isl.SOURCE IS NOT NULL THEN isl.SOURCE ELSE od.SOURCE END AS SOURCE,
+    COALESCE(CAST(isl.SOURCE AS VARCHAR), CAST(od.SOURCE AS VARCHAR)) AS SOURCE,
  
-    CASE WHEN isl.source_pk IS NOT NULL THEN isl.source_pk ELSE CONCAT_WS('.',od.SOURCE,od.employeeid,od.clientid) END AS SOURCE_PK,
+    COALESCE(CAST(isl.source_pk AS VARCHAR), CAST(CONCAT_WS('.', od.SOURCE, od.employeeid, od.clientid) AS VARCHAR)) AS SOURCE_PK,
  
-    CASE WHEN isl.HR_CLIENT_ID IS NOT NULL THEN isl.HR_CLIENT_ID ELSE CONCAT_WS('.',od.SOURCE,od.CLIENTCODE) END AS HR_CLIENT_ID,
+    COALESCE(CAST(isl.hr_client_id AS VARCHAR), CAST(CONCAT_WS('.', od.SOURCE, od.CLIENTCODE) AS VARCHAR)) AS HR_CLIENT_ID,
  
 MD5(CONCAT(
  
