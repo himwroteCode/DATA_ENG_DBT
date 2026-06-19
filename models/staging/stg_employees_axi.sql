@@ -207,47 +207,47 @@ t2."id" AS employee_id,
  
     t2."path_param_client_id" as client_id,
  
-    t3."firstName" AS FIRST_NAME,  
+    cast(t3."firstName" as string) AS FIRST_NAME,  
  
-    t3."lastName" AS LAST_NAME,  
+    cast(t3."lastName" as string) AS LAST_NAME,  
  
-    t3."middleName" AS MIDDLE_NAME,       
+    cast(t3."middleName" as string) AS MIDDLE_NAME,       
  
-    t3."preferredName" AS PREFERRED_NAME,  
+    cast(t3."preferredName" as string) AS PREFERRED_NAME,  
  
-    t3."preferredPronouns" AS PREFERRED_PRONOUNS,  
+    cast(t3."preferredPronouns" as string) AS PREFERRED_PRONOUNS,  
  
-    t3."prefix" AS PREFIX,  
+    cast(t3."prefix" as string) AS PREFIX,  
  
-    t3."residentGeoCode" AS RESIDENT_GEO_CODE,  
+    cast(t3."residentGeoCode" as string) AS RESIDENT_GEO_CODE,  
  
-    t3."schoolDistrictCode" AS SCHOOL_DISTRICT_CODE,  
+    cast(t3."schoolDistrictCode" as string) AS SCHOOL_DISTRICT_CODE,  
  
-    t3."suffix" AS SUFFIX,
+    cast(t3."suffix" as string) AS SUFFIX,
  
-    t3."address1" AS address1,
+    cast(t3."address1" as string) AS address1,
  
-    t3."address2" AS address2,
+    cast(t3."address2" as string) AS address2,
  
-    t3."city" AS city,
+    cast(t3."city" as string) AS city,
  
-    t3."country" AS country,
+    cast(t3."country" as string) AS country,
  
-    t3."deleteAddress" AS delete_address,
+    cast(t3."deleteAddress" as string) AS delete_address,
  
-    t3."state" AS state,
+    cast(t3."state" as string) AS state,
  
-    t3."zipCode" AS zip_code,
+    cast(t3."zipCode" as string) AS zip_code,
  
-    t4."faxNumber" AS FAX_NUMBER,  
+    cast(t4."faxNumber" as string) AS FAX_NUMBER,  
  
-    t4."homePhone" AS HOME_PHONE,  
+    cast(t4."homePhone" as string) AS HOME_PHONE,  
  
-    t4."mobilePhone" AS MOBILE_PHONE,  
+    cast(t4."mobilePhone" as string) AS MOBILE_PHONE,  
  
-    t4."officePhone" AS OFFICE_PHONE,  
+    cast(t4."officePhone" as string) AS OFFICE_PHONE,  
  
-    t4."personalEmailAddress" AS PERSONAL_EMAIL_ADDRESS,
+    cast(t4."personalEmailAddress" as string) AS PERSONAL_EMAIL_ADDRESS,
  
     'axi' AS SOURCE,
  

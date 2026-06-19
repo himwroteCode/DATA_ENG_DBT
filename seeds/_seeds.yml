@@ -10,6 +10,23 @@ seeds:
     config:
       alias: ISL_BRONZE_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_NAME_ADDRESS
       quote_columns: true
+      column_types:
+        firstName: varchar
+        lastName: varchar
+        middleName: varchar
+        preferredName: varchar
+        preferredPronouns: varchar
+        prefix: varchar
+        suffix: varchar
+        residentGeoCode: varchar
+        schoolDistrictCode: varchar
+        address1: varchar
+        address2: varchar
+        city: varchar
+        country: varchar
+        deleteAddress: varchar
+        state: varchar
+        zipCode: varchar
 
   - name: isl_bronze_clients_clientid_employeeswithssn_personal
     config:
@@ -25,6 +42,23 @@ seeds:
     config:
       alias: ASPEN_RAW_CLIENTS_CLIENTID_EMPLOYEESWITHSSN_NAME_ADDRESS
       quote_columns: true
+      column_types:
+        firstName: varchar
+        lastName: varchar
+        middleName: varchar
+        preferredName: varchar
+        preferredPronouns: varchar
+        prefix: varchar
+        suffix: varchar
+        residentGeoCode: varchar
+        schoolDistrictCode: varchar
+        address1: varchar
+        address2: varchar
+        city: varchar
+        country: varchar
+        deleteAddress: varchar
+        state: varchar
+        zipCode: varchar
 
   - name: aspen_raw_clients_clientid_employeeswithssn_personal
     config:
@@ -45,3 +79,11 @@ seeds:
     config:
       alias: VW_EMPLOYEES
       quote_columns: true
+      column_types:
+        PREFERREDNAME: varchar
+        PREFIX: varchar
+        SUFFIX: varchar
+        MIDDLENAME: varchar
+        FAXNUMBER: varchar
+        FIRSTNAME: varchar
+        LASTNAME: varchar
